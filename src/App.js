@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import {Container, Typography, Paper } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container sx={{ bgcolor: "silver", height: "100vh" }}>
+      <Typography variant="h1" align="center">
+        Mavis Cheng 
+      </Typography>
+      <Paper elevation={3} sx={{ p: 2, m: 2 }}>
+        <Typography variant="h5" align="center">
+          About Me / Contact / Projects / Resume 
+        </Typography>
+      </Paper>
+    </Container>
   );
 }
 
