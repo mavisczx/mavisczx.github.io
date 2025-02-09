@@ -13,6 +13,36 @@ import image from "./assets/IMG_2509.png";
 import tuder from "./assets/Tuder.png";
 import scamalec from "./assets/scamalec.png";
 import contact from "./assets/contact.png";
+import cct from "./assets/cct.png";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Button,
+} from "@mui/material";
+
+const projects = [
+  {
+    title: "Tuder [SWE]",
+    description: "A platform connecting students and tutors for freelancers.",
+    image: tuder,
+    link: "https://drive.google.com/file/d/1K26THpU81Wgk3tWSIPqivahKYL1nr52B/view?usp=sharing",
+  },
+  {
+    title: "Scamalec [ML]",
+    description:
+      "A telegram bot scam detection tool to prevent phishing and fraud.",
+    image: scamalec,
+    link: "https://t.me/scamalec_bot",
+  },
+  {
+    title: "Carbon Credit Tokens [Blockchain]",
+    description: "Using blockchain to revolutionize carbon credit trading.",
+    image: cct,
+    link: "https://drive.google.com/file/d/1fu8MuGq_wsEhS6sWxwunlZILqmN-cU-U/view?usp=sharing",
+  },
+];
 
 const theme = createTheme({
   palette: {
@@ -123,9 +153,10 @@ function App() {
             About Me
           </Typography>
           <Typography variant="body1" align="center" sx={{ mb: 4 }}>
-            I am a y3 information systems undergraduate at the National
-            University of Singapore. I am passionate about technology and enjoy
-            learning new things.
+            Hello! I am Mavis and I am passionate about product - especially in
+            building products that last! From origami (at 6 years old) to
+            rainbow looms (at 10 years old) to software projects (at 19 years
+            old), I hope to deliver meaningful products.
           </Typography>
           {/* <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Paper sx={{ p: 2, maxWidth: "500px", textAlign: "center" }}>
@@ -173,45 +204,43 @@ function App() {
           <Typography variant="h3" align="center" sx={{ mb: 4 }}>
             My Work
           </Typography>
-          <Typography variant="body1" align="center" sx={{ mb: 4 }}>
-            Here are some of my latest work.
-          </Typography>
           <Box
             sx={{
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "center",
-              gap: 2,
+              gap: 4,
             }}
           >
-            <img
-              src={tuder}
-              alt="Portfolio 1"
-              style={{
-                width: "calc(45% - 5px)",
-                height: "auto",
-                borderRadius: "8px",
-              }}
-            />
-            <img
-              src={scamalec}
-              alt="Portfolio 2"
-              style={{
-                width: "calc(30% - 5px)",
-                height: "auto",
-                borderRadius: "8px",
-              }}
-            />
-            {/* <img
-              src={scam}
-              alt="Portfolio 3"
-              style={{ width: "calc(25% - 16px)", borderRadius: "8px" }}
-            /> */}
-            {/* <img
-              src="your-image-url-portfolio4.jpg"
-              alt="Portfolio 4"
-              style={{ width: "calc(25% - 16px)", borderRadius: "8px" }}
-            /> */}
+            {projects.map((project, index) => (
+              <Card key={index} sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={project.image}
+                    alt={project.title}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6">
+                      {project.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {project.description}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <Button
+                  href={project.link}
+                  target="_blank"
+                  variant="contained"
+                  color="primary"
+                  sx={{ m: 2 }}
+                >
+                  View Project
+                </Button>
+              </Card>
+            ))}
           </Box>
         </Container>
       </Box>
