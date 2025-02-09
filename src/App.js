@@ -47,7 +47,7 @@ const projects = [
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#2C4C9C", // Blue theme color
+      main: "#7393B3", // Blue theme color
     },
     secondary: {
       main: "#ffffff",
@@ -89,19 +89,39 @@ function App() {
         sx={{ bgcolor: "primary.main", boxShadow: "none" }}
       >
         <Toolbar>
-          <Typography variant="h5" sx={{ flexGrow: 1 }}>
+          <Typography variant="h5" sx={{ flexGrow: 1 }} >
             Mavis Cheng 郑在萱
           </Typography>
-          <Typography variant="h6">Home</Typography>
-          <Typography variant="h6" sx={{ ml: 2 }}>
+          <Button
+            color="inherit"
+            onClick={() =>
+              document
+                .getElementById("about")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             About
-          </Typography>
-          <Typography variant="h6" sx={{ ml: 2 }}>
+          </Button>
+          <Button
+            color="inherit"
+            onClick={() =>
+              document
+                .getElementById("portfolio")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             Portfolio
-          </Typography>
-          <Typography variant="h6" sx={{ ml: 2 }}>
+          </Button>
+          <Button
+            color="inherit"
+            onClick={() =>
+              document
+                .getElementById("contact")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             Contact
-          </Typography>
+          </Button>
         </Toolbar>
       </AppBar>
 
@@ -140,14 +160,14 @@ function App() {
             zIndex: 2, // Ensure content appears above the faded image
           }}
         >
-          <Typography variant="h1" color="secondary" align="center">
-            Mavis Cheng
+          <Typography variant="h1" color="secondary" align="center" fontSize={300}>
+            Hi,
           </Typography>
         </Box>
       </Box>
 
       {/* About Me Section */}
-      <Box sx={contentStyle}>
+      <Box id="about" sx={contentStyle}>
         <Container>
           <Typography variant="h3" align="center" sx={{ mb: 4 }}>
             About Me
@@ -184,6 +204,7 @@ function App() {
         }}
       >
         <Box
+          id="portfolio"
           sx={{
             display: "flex",
             alignItems: "center",
@@ -269,7 +290,7 @@ function App() {
       </Box>
 
       {/* Contact Section */}
-      <Box sx={contentStyle}>
+      <Box id="contact" sx={contentStyle}>
         <Container>
           <Typography variant="h3" align="center" sx={{ mb: 4 }}>
             Contact Me
