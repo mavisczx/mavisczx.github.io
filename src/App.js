@@ -9,6 +9,7 @@ import {
   CssBaseline,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import coverimage from "./assets/whisk_mavislawson.png";
 import image from "./assets/IMG_2509.png";
 import tuder from "./assets/Tuder.png";
 import scamalec from "./assets/scamalec.png";
@@ -130,7 +131,7 @@ function App() {
         sx={{
           ...parallaxStyle,
           height: "100vh",
-          backgroundImage: `url(${image})`, // Parallax background image
+          backgroundImage: `url(${coverimage})`, // Parallax background image
         }}
       >
         {/* Overlay with faded image */}
