@@ -390,7 +390,7 @@ function App() {
               fontSize: "0.85rem",
             }}
           >
-            Software Engineer & Product Manager
+            Software Engineer · Product Manager · Project Manager
           </Typography>
           <Typography
             variant="h1"
@@ -419,7 +419,7 @@ function App() {
               lineHeight: 1.6,
             }}
           >
-            I build products that last — from ideation to deployment.
+            Engineer. Manager. Builder. I wear many hats to ship products end-to-end.
           </Typography>
         </Box>
 
