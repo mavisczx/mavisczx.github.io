@@ -577,12 +577,12 @@ function App() {
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
-              gap: 4,
+              gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(4, 1fr)" },
+              gap: 3,
             }}
           >
             {projects.map((project, index) => (
-              <FadeInSection key={index} delay={index * 0.15}>
+              <FadeInSection key={index} delay={index * 0.1}>
                 <Card
                   className="card-hover"
                   sx={{
@@ -595,14 +595,30 @@ function App() {
                     flexDirection: "column",
                   }}
                 >
-                  <Box sx={{ position: "relative", overflow: "hidden" }}>
+                  <Box
+                    sx={{
+                      position: "relative",
+                      overflow: "hidden",
+                      bgcolor: "rgba(255,255,255,0.02)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: 140,
+                      p: 2,
+                    }}
+                  >
                     <CardMedia
                       className="card-image"
                       component="img"
-                      height="200"
                       image={project.image}
                       alt={project.title}
-                      sx={{ transition: "transform 0.4s ease" }}
+                      sx={{
+                        transition: "transform 0.4s ease",
+                        objectFit: "contain",
+                        maxHeight: "100%",
+                        width: "auto",
+                        maxWidth: "100%",
+                      }}
                     />
                     <Chip
                       label={project.tag}
@@ -620,10 +636,10 @@ function App() {
                       }}
                     />
                   </Box>
-                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                  <CardContent sx={{ flexGrow: 1, p: 2 }}>
                     <Typography
                       variant="h6"
-                      sx={{ color: "white", mb: 1, fontWeight: 600 }}
+                      sx={{ color: "white", mb: 0.5, fontWeight: 600, fontSize: "0.95rem" }}
                     >
                       {project.title}
                     </Typography>
@@ -631,8 +647,9 @@ function App() {
                       variant="body2"
                       sx={{
                         color: "text.secondary",
-                        mb: 2,
-                        lineHeight: 1.6,
+                        mb: 1.5,
+                        lineHeight: 1.5,
+                        fontSize: "0.8rem",
                       }}
                     >
                       {project.description}
@@ -646,14 +663,14 @@ function App() {
                           sx={{
                             bgcolor: "rgba(255,255,255,0.05)",
                             color: "text.secondary",
-                            fontSize: "0.7rem",
-                            height: 24,
+                            fontSize: "0.65rem",
+                            height: 22,
                           }}
                         />
                       ))}
                     </Box>
                   </CardContent>
-                  <Box sx={{ p: 3, pt: 0 }}>
+                  <Box sx={{ p: 2, pt: 0 }}>
                     <Button
                       href={project.link}
                       target="_blank"
