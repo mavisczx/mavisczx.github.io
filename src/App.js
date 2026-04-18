@@ -18,6 +18,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import tuder from "./assets/Tuder.png";
 import scamalec from "./assets/scamalec.png";
 import cct from "./assets/cct.png";
+import chio from "./assets/chio_logos.jpg";
 
 // ─── Inline SVG Icons ────────────────────────────────────────────────────────
 
@@ -55,6 +56,15 @@ const OpenInNewIcon = () => (
 
 const projects = [
   {
+    title: "Chio",
+    tag: "Product",
+    description:
+      "A beauty and wellness super app (2 mobile apps + 1 web) unifying social engagement, service bookings, and personalisation. Central marketplace connecting users with service providers for discovery, booking, and payment.",
+    tech: ["React Native", "React", "Figma", "Firebase"],
+    image: chio,
+    link: "https://www.figma.com/design/cfw3srLs423nmbMnTpS1Ov/Chio.?node-id=975-9028&t=lcFFyrak4NEPEIv3-1",
+  },
+  {
     title: "Tuder",
     tag: "SWE",
     description:
@@ -89,15 +99,18 @@ const navLinks = [
   { label: "Contact", target: "contact" },
 ];
 
-const techStack = [
+const skillSet = [
+  "Product Management",
+  "Agile / Scrum",
   "React",
   "Python",
   "Solidity",
   "Node.js",
-  "NLP",
-  "MongoDB",
-  "Web3",
-  "Telegram API",
+  "Figma",
+  "Jira",
+  "PostgreSQL",
+  "PowerBI",
+  "Data Analysis",
 ];
 
 // ─── Scroll Animation Hook ──────────────────────────────────────────────────
@@ -476,19 +489,20 @@ function App() {
                 sx={{ color: "text.primary", mb: 3, lineHeight: 1.8 }}
               >
                 Hello! I'm Mavis — I'm passionate about building products that
-                make a real difference. I bring together engineering depth and
-                product thinking to create software that is not only technically
-                sound, but genuinely useful.
+                make a real difference. With experience in product management at
+                Apple, Jurong Port, and OCBC, alongside software engineering
+                projects across blockchain, ML, and full-stack development, I
+                bridge the gap between technical execution and product strategy.
               </Typography>
               <Typography
                 variant="body1"
                 sx={{ color: "text.secondary", mb: 4, lineHeight: 1.8 }}
               >
-                From origami at 6, to rainbow looms at 10, to full-stack
-                applications at 19 — I have always loved making things. Today, I
-                channel that energy into shipping products end-to-end: scoping
-                requirements, architecting systems, writing code, and iterating
-                on user feedback.
+                From origami at 6, to rainbow looms at 10, to shipping products
+                and writing code at 19 — I have always loved making things.
+                Today, I channel that energy into building end-to-end: scoping
+                requirements, managing stakeholders, architecting systems, and
+                iterating on user feedback.
               </Typography>
 
               <Typography
@@ -502,10 +516,10 @@ function App() {
                   fontSize: "0.7rem",
                 }}
               >
-                Technologies I work with
+                Skill Set
               </Typography>
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                {techStack.map((tech) => (
+                {skillSet.map((tech) => (
                   <Chip
                     key={tech}
                     label={tech}
@@ -563,7 +577,7 @@ function App() {
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+              gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
               gap: 4,
             }}
           >
